@@ -1,3 +1,4 @@
+<p>
 Hello New members of Control Systems!
 Before proceeding any further, ensure you have git installed on the machine you will be installing ROS on. (For linux, run: sudo apt-get install git -y)
 The set of scripts in this repository are inteded to assit you with your setup of the MAVROS enviroment as well as the px4 autopilot.
@@ -34,3 +35,4 @@ Next, open a new terminal instance, and run: roslaunch pkg_name start_pkg.launch
 This should start the simulator provided the installation process has been follow correctly
 
 NOTE: You may also clone this repository to your linux instance. Simply chmod +x the bash files and run them in order. Then, return to the guide provided.
+</p>
