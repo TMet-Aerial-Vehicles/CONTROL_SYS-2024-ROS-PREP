@@ -1,4 +1,4 @@
-# ROS Noetic
+# ROS and PX4
 
 ## Introduction to ROS
 ROS (Robot Operating System) is a powerful tool for robotics software development. To get started with understanding the basics of ROS, refer to this introductory video:
@@ -11,8 +11,9 @@ For this installation, we will be using **ROS (1) Noetic**, which is compatible 
 
 If you prefer to run it on a virtual machine (VM), you can use VMware. Download VMware Player from the following link: [VMware Player 17.6.1](https://softwareupdate.vmware.com/cds/vmw-desktop/player/17.6.1/24319023/windows/core/VMware-player-17.6.1-24319023.exe.tar).
 
-## ROS and PX4 Installation
-PX4 is an open-source flight control software for drones and other unmanned vehicles. It is widely used for UAV development and simulation.
+## Introduction to PX4
+PX4 is an open-source flight control software for drones and other unmanned vehicles. It is widely used for UAV development and simulation.<br><br>
+If you want to learn more, you can visit the official [PX4 website](https://docs.px4.io/main/en/getting_started/px4_basic_concepts.html).
 
 ### Installation Commands
 To install ROS Noetic and PX4, you will need to run two commands. They will both reboot your machine. After running the first script, you will need to run the second installation command. <br>
