@@ -1,4 +1,4 @@
-# ROS and PX4 Info
+# ROS Noetic
 
 ## Introduction to ROS
 ROS (Robot Operating System) is a powerful tool for robotics software development. To get started with understanding the basics of ROS, refer to this introductory video:
