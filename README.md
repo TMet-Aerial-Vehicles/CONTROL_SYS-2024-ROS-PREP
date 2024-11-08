@@ -1,38 +1,45 @@
-<p>
-Hello New members of Control Systems!
-Before proceeding any further, ensure you have git installed on the machine you will be installing ROS on. (For linux, run: sudo apt-get install git -y)
-The set of scripts in this repository are inteded to assit you with your setup of the MAVROS enviroment as well as the px4 autopilot.
-These scripts are for use with ROS noetic running on ubuntu 20.04 only.
-This project is a work in progress, and more scripts will be added as libraries are used.
-To begin, ensure you are in the home directory (run: cd ~)
+# ROS and PX4 Installation Guide
 
-Then, for each of the .bash files, repeat the following process:
-1. touch $FILENAME (creates the file, replace $FILENAME with the name of the bash script to be created)
-2. chmod +x (this will grant the script execute permissions)
-3. nano $FILENAME (will open the file in a text editor, from there, copy paste the scripts into the files you created)
+## Introduction to ROS
+ROS (Robot Operating System) is a powerful tool for robotics software development. To get started with understanding the basics of ROS, refer to this introductory video:
+[Intro to ROS - The Basics](https://www.youtube.com/watch?v=8QfI5a7lTKU).
 
-After this process has been complete, run the files in the following order:
-1. prepare_ws
-2. prepare_px4_repo (this will reboot your ubuntu instance)
-3. prepare_offboard_1
-Run the scripts using the command: bash $FILENAME
+### ROS Distributions
+ROS has various distributions, each tailored for specific development needs and compatibility. A comprehensive explanation of ROS distributions can be found here: [ROS Distributions](http://wiki.ros.org/Distributions).
 
-After running prepare_offboard_1, run: cd ~/catkin_ws/src/pkg_name/scripts/launch
-Then, paste the start_pkg.launch template into the corresponding file.
-Next, return to ~.
-edit .bashrc, pasting the following lines at the end of the file:
+For this installation, we will be using **ROS (1) Noetic**, which is compatible only with **Ubuntu 20.04 (Focal Fossa)**. You can download Ubuntu 20.04 from this link: [Download Ubuntu 20.04](https://releases.ubuntu.com/focal/).
 
-source /opt/ros/noetic/setup.bash
-source ~/catkin_ws/devel/setup.bash
-source ~/PX4-Autopilot/Tools/simulation/gazebo-classic/setup_gazebo.bash ~/PX4-Autopilot ~/PX4-Autopilot/build/px4_sitl_default
+If you prefer to run it on a virtual machine (VM), you can use VMware. Download VMware Player from the following link: [VMware Player 17.6.1](https://softwareupdate.vmware.com/cds/vmw-desktop/player/17.6.1/24319023/windows/core/VMware-player-17.6.1-24319023.exe.tar).
 
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:\~/PX4-Autopilot
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:\~/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic
-export PATH="usr/bin/python3.8:$PATH"
-export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:/usr/lib/x86_64-linux-gnu/gazebo-9/plugins
+## PX4 Installation
+PX4 is an open-source flight control software for drones and other unmanned vehicles. It is widely used for UAV development and simulation.
 
-Next, open a new terminal instance, and run: roslaunch pkg_name start_pkg.launch
-This should start the simulator provided the installation process has been follow correctly
+### Installation Commands
+To install ROS Noetic and PX4, you will need to run two commands. They will both reboot your machine. After running the first script, you will need to run the second installation command. <br>
+Run this command in your ubuntu terminal. Make sure you have curl installed `sudo apt install curl -y`:
+```bash
+sudo curl -S https://raw.githubusercontent.com/CerfMetal/ROS-Install/refs/heads/main/install_1.sh | sudo bash
+```
+<br>
+Then run the second command: <br>
 
-NOTE: You may also clone this repository to your linux instance. Simply chmod +x the bash files and run them in order. Then, return to the guide provided.
-</p>
+```bash
+sudo curl -S https://raw.githubusercontent.com/CerfMetal/ROS-Install/refs/heads/main/install_2.sh | sudo bash
+```
+<br>
+If everything installed properly, you should be able to run this command without any problems and get a simulation running:
+
+```bash
+roslaunch pkg_name start_pkg.launch
+```
+You can then open a new terminal window (keep the one above running) and run:
+
+```bash
+chmod +x ./QGroundControl.AppImage
+```
+
+## Sample Codes
+*Sample code sections will be provided in the future once installation is complete.*
+
+Ensure your ROS and PX4 environments are correctly set up before running any scripts to avoid compatibility issues.
+
